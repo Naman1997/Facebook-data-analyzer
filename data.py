@@ -29,18 +29,38 @@ for subdir, dirs, files in os.walk(directory):
                         print(blob.tags)
                         print(blob.sentiment)
                         subjectivity = subjectivity+blob.sentiment.subjectivity
-                        sen_polarity = sen_polarity+blob.sentiment.polarity
                         print(blob.sentiment.polarity)
                         blob_sentiment = blob_sentiment+blob.sentiment.polarity
                         print(a)
                         print("\n")
 
 
+aa=polarity/count
+bb=blob_sentiment/count
+cc=subjectivity/count
 
-print("Average Sentence Sentiment Polarity = ",polarity/count)
-print("Average Blob Sentiment Polarity = ",blob_sentiment/count)
-print("Average sentiment subjectivity =",subjectivity/count)
-print("Average sentiment polarity",sen_polarity/count)
+print("Average Sentence Sentiment Polarity = ",aa)
+print("Average Blob Sentiment Polarity = ",bb)
+print("Average sentiment subjectivity =",cc)
 print("Count =",count)
 
+left = [1, 2, 3]
 
+
+height = [aa, bb, cc]
+
+tick_label = ['Average Sentence Sentiment Polarity', 'Average Blob Sentiment Polarity', 'Average sentiment subjectivity']
+
+# plotting a bar chart
+plt.bar(left, height, tick_label = tick_label,
+        width = 0.8, color = ['red', 'green'])
+ 
+# naming the x-axis
+plt.xlabel('x - axis')
+# naming the y-axis
+plt.ylabel('y - axis')
+# plot title
+plt.title('My bar chart!')
+ 
+# function to show the plot
+plt.show()

@@ -52,6 +52,7 @@ for filename in os.listdir(directory):
             x = soup.find_all("div",class_= "_3-94 _2lem")
             for e in x:
                 a=e.text
+                print(a)
                 b.append(a[0:3])
                 count=count+1
             print(count)
